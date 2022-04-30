@@ -59,6 +59,6 @@ class ThermalConductivityofIOLAdmin(admin.TabularInline):
 
 class ElementAdmin(admin.ModelAdmin):
     inlines = [Vapor_Pressure_Of_IOL, DensityOfIOLAdmin, CriticalConstantsAndAFIOCAdmin, HeatofVaporizationOIOLAdmin, HeatCapacityOIOLAdmin, HeatCapacityAtConstantPOIOLpolynomialAdmin, HeatCapacityAtConstantPOIOLhyperbolicAdmin, EnthalpyandGibbsAdmin, VaporViscosityIOSAdmin, ViscosityofIOLAdmin, VaporThermalofIOSAdmin, ThermalConductivityofIOLAdmin,]
-    list_display = ['name', 'formula', 'CASno', 'molwt']
+    list_display = ['name', 'formula', 'CASno']
 
 admin.site.register(Element, ElementAdmin)

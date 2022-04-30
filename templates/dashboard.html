@@ -1,0 +1,22 @@
+{% extends "static.html" %}{% load static %} {% block static %}
+<div class="container-scroller">
+    {% include "navbar.html" %}
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                {% block changepassword %}
+                {% endblock changepassword %}
+            </div>
+
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            {% include "footer.html" %}
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+{% endblock static %}

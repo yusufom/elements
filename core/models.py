@@ -8,7 +8,6 @@ class Element(models.Model):
     name = models.CharField(max_length=300, blank=True, null=True)
     formula= RichTextUploadingField(max_length=200,blank=True, null=True)
     CASno = models.CharField(max_length=300,blank=True, null=True)
-    molwt = models.CharField(max_length=300,blank=True, null=True)
     
     def __str__(self):
         return f"{self.name}"
@@ -26,7 +25,12 @@ class  Vapor_Pressure_Of_IOL(models.Model):
     PTmax= models.CharField(max_length=2000, blank=True, null=True)
         
 class  DensityOfIOL(models.Model):
+    Equation = (
+    ('1','1'),
+    ('2','2'),
+    )
     el = models.ForeignKey(Element, related_name='DensityOfIOl', blank=True, on_delete=models.CASCADE)
+    eqn = models.CharField(max_length=2000, blank=True, null=True, choices=Equation)
     C1= models.CharField(max_length=2000, blank=True, null=True)
     C2= models.CharField(max_length=2000, blank=True, null=True)
     C3= models.CharField(max_length=2000, blank=True, null=True)

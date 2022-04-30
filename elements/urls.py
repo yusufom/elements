@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from core.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('', home, name='Home'),
+    path('element/', pro_home, name='Process'),
+    path('element/<int:id>/', element_detail, name='ProcessDetail')
 ]
